@@ -1,0 +1,68 @@
+<root>
+    <item name='net.minecraftforge.server.permission.context.AreaContext T get(net.minecraftforge.server.permission.context.ContextKey&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.TargetContext boolean covers(net.minecraftforge.server.permission.context.ContextKey&lt;?&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.BlockPosContext BlockPosContext(net.minecraft.entity.player.EntityPlayer, net.minecraft.util.math.ChunkPos) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.BlockPosContext boolean covers(net.minecraftforge.server.permission.context.ContextKey&lt;?&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.IContext T get(net.minecraftforge.server.permission.context.ContextKey&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.BlockPosContext T get(net.minecraftforge.server.permission.context.ContextKey&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.Context boolean covers(net.minecraftforge.server.permission.context.ContextKey&lt;?&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.AreaContext boolean covers(net.minecraftforge.server.permission.context.ContextKey&lt;?&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.TargetContext T get(net.minecraftforge.server.permission.context.ContextKey&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.Context T get(net.minecraftforge.server.permission.context.ContextKey&lt;T&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.ContextKey net.minecraftforge.server.permission.context.ContextKey&lt;E&gt; create(java.lang.String, java.lang.Class&lt;E&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.ContextKeys POS'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.ContextKeys BLOCK_STATE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.ContextKeys TARGET'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.ContextKey net.minecraftforge.server.permission.context.ContextKey&lt;E&gt; create(java.lang.String, java.lang.Class&lt;E&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.ContextKeys FACING'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.Context net.minecraftforge.server.permission.context.Context set(net.minecraftforge.server.permission.context.ContextKey&lt;T&gt;, T)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='net.minecraftforge.server.permission.context.ContextKeys AREA'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

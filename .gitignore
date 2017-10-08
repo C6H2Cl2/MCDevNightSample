@@ -87,6 +87,5 @@ fabric.properties
 hs_err_pid*
 
 #other
-annotations/
 MCDevNightSample.iml
 src/main/resources/assets/
