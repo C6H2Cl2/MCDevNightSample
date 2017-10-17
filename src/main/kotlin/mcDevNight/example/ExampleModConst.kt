@@ -1,12 +1,10 @@
 package mcDevNight.example
 
 import c6h2cl2.YukariLib.Util.BlockUtil
-import c6h2cl2.YukariLib.Util.ItemUtil
 import net.minecraft.block.Block
 import net.minecraft.block.material.Material
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.creativetab.CreativeTabs
-import net.minecraft.init.Items
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
 import net.minecraft.util.ResourceLocation
@@ -19,19 +17,23 @@ import net.minecraftforge.fml.relauncher.SideOnly
  * @author C6H2Cl2
  */
 
-const val MOD_ID = "example_mod"
+typealias MCItem = net.minecraft.init.Items
+typealias MCBlock = net.minecraft.init.Blocks
+typealias Registry = ExampleModRegistry
+
+const val MOD_ID = "examplemod"
 const val MOD_NAME = "ExampleMod"
 const val VERSION = "1.0.0"
-const val DEPENDENCIES = "required-after:yukarilib"
+const val DEPENDENCIES = "required-after:YukariLib"
 
 val tabExampleMod = object : CreativeTabs("exampleMod") {
     override fun getTabIconItem(): Item {
-        return Items.APPLE
+        return MCItem.APPLE
     }
 }
 
 //Item  ===========================================================================================
-val exampleItem = ItemUtil.CreateItem("exampleItem", "example_item", MOD_ID, tabExampleMod)
+val exampleItem = createItem("exampleItem", "example_item")
 
 //Block ===========================================================================================
 val exampleBlock = BlockUtil.CreateBlock("exampleBlock", "example_block", MOD_ID, Material.ROCK, 20f, 20f).setCreativeTab(tabExampleMod)
@@ -48,6 +50,10 @@ fun register() {
 fun texture() {
     setTexture(exampleItem)
     setTexture(exampleBlock)
+}
+
+fun recipe() {
+
 }
 
 private fun register(item: Item) {
@@ -101,4 +107,16 @@ private fun setTexture(item: Item, range: IntRange, otherTexture: Boolean, custo
             ModelLoader.setCustomModelResourceLocation(item, it, getModelResourceLocation(item))
         }
     }
+}
+
+private fun createItem(name: String, textureName: String = name, stackSize: Int = 64, /*hasSubType : Boolean = false,
+                       maxMeta : Int = 0,*/isFull3D: Boolean = false, containerItem: Item? = null): Item {
+    val item = Item()
+    item.unlocalizedName = name
+    item.registryName = ResourceLocation(MOD_ID, textureName)
+    item.creativeTab = tabExampleMod
+    item.setMaxStackSize(stackSize)
+    if (isFull3D) item.setFull3D()
+    if (containerItem != null) item.containerItem = containerItem
+    return item
 }

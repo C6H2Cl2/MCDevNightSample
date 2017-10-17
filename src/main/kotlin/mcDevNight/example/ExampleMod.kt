@@ -9,7 +9,6 @@ import net.minecraftforge.fml.common.SidedProxy
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
-import net.minecraftforge.fml.common.registry.GameRegistry
 
 /**
  * @author C6H2Cl2
@@ -35,11 +34,14 @@ class ExampleMod {
     @EventHandler
     fun preinit(event: FMLPreInitializationEvent) {
         register()
+        ExampleModRegistry.preinit(event)
+        if(event.side.isClient) {
+            texture()
+        }
     }
 
     @EventHandler
     fun init(event: FMLInitializationEvent) {
-
     }
 
     @EventHandler

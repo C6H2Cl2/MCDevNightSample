@@ -1,0 +1,8 @@
+itemGroup.exampleMod=Example Mod
+#Item
+item.exampleItem.name=Example Item
+item.exampleAxe.name=Example Axe
+item.exampleEnchantedAxe.name=Example Enchanted Axe
+
+#Block
+tile.exampleBlock.name=Example Block
