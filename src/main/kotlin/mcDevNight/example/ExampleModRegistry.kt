@@ -1,7 +1,7 @@
 package mcDevNight.example
 
-import mcDevNight.example.item.ItemEaxmpleEnchantedAxe
 import mcDevNight.example.item.ItemExampleAxe
+import mcDevNight.example.item.ItemExampleEnchantedAxe
 import net.minecraft.block.Block
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.item.Item
@@ -20,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly
 object ExampleModRegistry {
     // Items ======================================================================================
     val exampleAxe = ItemExampleAxe()
-    val enchantedAxe = ItemEaxmpleEnchantedAxe()
+    val enchantedAxe = ItemExampleEnchantedAxe()
 
     // Blocks =====================================================================================
 

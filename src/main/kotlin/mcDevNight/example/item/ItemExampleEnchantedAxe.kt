@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation
 /**
  * @author C6H2Cl2
  */
-class ItemEaxmpleEnchantedAxe: ItemAxe(IRON, 6.0f, -2.0f) {
+class ItemExampleEnchantedAxe : ItemAxe(IRON, 6.0f, -2.0f) {
     init {
         unlocalizedName = "exampleEnchantedAxe"
         registryName = ResourceLocation(MOD_ID, "example_enchanted_axe")
