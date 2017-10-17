@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
+import net.minecraft.item.ItemStack
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.client.model.ModelLoader
 import net.minecraftforge.fml.common.registry.GameRegistry
@@ -53,7 +54,8 @@ fun texture() {
 }
 
 fun recipe() {
-
+    addRecipe(ItemStack(exampleItem), "DDD", "EEE", "GGG", 'D', MCBlock.DIAMOND_BLOCK, 'E', MCBlock.EMERALD_BLOCK, 'G', MCBlock.GOLD_BLOCK)
+    addRecipe(ItemStack(exampleBlock), "EAE", "AEA", "EAE", 'E', exampleItem, 'A', MCItem.APPLE)
 }
 
 private fun register(item: Item) {
@@ -66,6 +68,10 @@ private fun register(block: Block) {
 
 private fun Block.getItemBlock(): Item {
     return Item.getItemFromBlock(this)!!
+}
+
+private fun addRecipe(output: ItemStack, vararg components: Any) {
+    GameRegistry.addRecipe(output, *components)
 }
 
 private fun Block.initItemBlock(registryName: ResourceLocation = this.registryName!!): Item {

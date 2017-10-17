@@ -3,6 +3,7 @@ package mcDevNight.example.item
 import mcDevNight.example.MOD_ID
 import mcDevNight.example.tabExampleMod
 import net.minecraft.creativetab.CreativeTabs
+import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.init.Enchantments
 import net.minecraft.init.Enchantments.*
 import net.minecraft.item.Item
@@ -10,6 +11,7 @@ import net.minecraft.item.Item.ToolMaterial.*
 import net.minecraft.item.ItemAxe
 import net.minecraft.item.ItemStack
 import net.minecraft.util.ResourceLocation
+import net.minecraft.world.World
 
 /**
  * @author C6H2Cl2
@@ -29,5 +31,17 @@ class ItemExampleEnchantedAxe : ItemAxe(IRON, 6.0f, -2.0f) {
             itemStack.addEnchantment(Enchantments.EFFICIENCY, 2)
             subItems.add(itemStack)
         }
+    }
+
+    override fun onCreated(stack: ItemStack, worldIn: World?, playerIn: EntityPlayer?) {
+        stack.addEnchantment(Enchantments.MENDING, 1)
+        stack.addEnchantment(EFFICIENCY, 2)
+    }
+
+    fun getEnchanted(): ItemStack {
+        val stack = ItemStack(this)
+        stack.addEnchantment(MENDING, 1)
+        stack.addEnchantment(EFFICIENCY, 2)
+        return stack
     }
 }

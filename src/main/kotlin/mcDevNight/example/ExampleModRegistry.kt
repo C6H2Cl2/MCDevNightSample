@@ -6,6 +6,7 @@ import net.minecraft.block.Block
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
+import net.minecraft.item.ItemStack
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.client.model.ModelLoader
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
@@ -38,7 +39,8 @@ object ExampleModRegistry {
     }
 
     fun init(event: FMLInitializationEvent) {
-
+        addRecipe(ItemStack(exampleAxe), "EE", "ES", " S", 'E', exampleItem, 'S', MCItem.STICK)
+        addRecipe(enchantedAxe.getEnchanted(), " B ", "BAB", " B ", 'B', exampleBlock, 'A', exampleAxe)
     }
 
     //この部分のコードは、ExampleModConstに記述してあるものと同一ですが、あえて重複して書いています。
@@ -51,6 +53,10 @@ object ExampleModRegistry {
 
     private fun register(block: Block) {
         GameRegistry.register(block)
+    }
+
+    private fun addRecipe(output: ItemStack, vararg components: Any) {
+        GameRegistry.addRecipe(output, *components)
     }
 
     private fun Block.getItemBlock(): Item {

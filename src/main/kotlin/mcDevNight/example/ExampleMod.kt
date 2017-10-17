@@ -34,7 +34,7 @@ class ExampleMod {
     @EventHandler
     fun preinit(event: FMLPreInitializationEvent) {
         register()
-        ExampleModRegistry.preinit(event)
+        Registry.preinit(event)
         if(event.side.isClient) {
             texture()
         }
@@ -42,6 +42,8 @@ class ExampleMod {
 
     @EventHandler
     fun init(event: FMLInitializationEvent) {
+        recipe()
+        Registry.init(event)
     }
 
     @EventHandler
