@@ -1,6 +1,5 @@
 package mcDevNight.example
 
-import c6h2cl2.YukariLib.Util.BlockUtil
 import net.minecraft.block.Block
 import net.minecraft.block.material.Material
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
@@ -25,7 +24,7 @@ typealias Registry = ExampleModRegistry
 const val MOD_ID = "examplemod"
 const val MOD_NAME = "ExampleMod"
 const val VERSION = "1.0.0"
-const val DEPENDENCIES = "required-after:YukariLib"
+const val DEPENDENCIES = "required:forgelin"
 
 val tabExampleMod = object : CreativeTabs("exampleMod") {
     override fun getTabIconItem(): Item {
@@ -37,7 +36,7 @@ val tabExampleMod = object : CreativeTabs("exampleMod") {
 val exampleItem = createItem("exampleItem", "example_item")
 
 //Block ===========================================================================================
-val exampleBlock = BlockUtil.CreateBlock("exampleBlock", "example_block", MOD_ID, Material.ROCK, 20f, 20f).setCreativeTab(tabExampleMod)
+val exampleBlock = createBlock("exampleBlock", "example_block", Material.ROCK, 20f, 20f).setCreativeTab(tabExampleMod)
 
 
 
@@ -125,4 +124,13 @@ private fun createItem(name: String, textureName: String = name, stackSize: Int 
     if (isFull3D) item.setFull3D()
     if (containerItem != null) item.containerItem = containerItem
     return item
+}
+
+private fun createBlock(name: String, textureName: String = name, material: Material, hardness: Float = 1.5f, resistance: Float = 10f): Block {
+    val block = Block(material)
+    block.unlocalizedName = name
+    block.registryName = ResourceLocation(MOD_ID, textureName)
+    block.setHardness(hardness)
+    block.setResistance(resistance)
+    return block
 }
