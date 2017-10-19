@@ -22,7 +22,7 @@ typealias MCBlock = net.minecraft.init.Blocks
 typealias Registry = ExampleModRegistry
 
 const val MOD_ID = "examplemod"
-const val MOD_NAME = "ExampleMod"
+const val MOD_NAME = "ExampleModCore"
 const val VERSION = "1.0.0"
 const val DEPENDENCIES = "required:forgelin"
 

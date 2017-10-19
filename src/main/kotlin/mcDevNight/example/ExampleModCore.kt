@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
  */
 
 @Mod(modid = MOD_ID, name = MOD_NAME, version = VERSION, dependencies = DEPENDENCIES, useMetadata = true, acceptedMinecraftVersions = "1.10.2")
-class ExampleMod {
+class ExampleModCore {
 
     companion object {
         @JvmStatic
@@ -28,7 +28,7 @@ class ExampleMod {
 
         @JvmStatic
         @Instance
-        lateinit var INSTANCE: ExampleMod
+        lateinit var INSTANCE: ExampleModCore
     }
 
     @EventHandler
