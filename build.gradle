@@ -1,5 +1,6 @@
 // For those who want the bleeding edge
 buildscript {
+    ext.kotlin_version = "1.1.51"
     repositories {
         jcenter()
         maven {
@@ -78,6 +79,10 @@ processResources
         exclude 'mcmod.info'
     }
 }
-repositories {
-    mavenCentral()
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
 }
