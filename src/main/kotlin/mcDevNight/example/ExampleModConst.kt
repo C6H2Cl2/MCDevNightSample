@@ -65,6 +65,8 @@ private fun register(block: Block) {
     GameRegistry.register(block)
 }
 
+// 以下、コピペ =========================================================================================
+
 private fun Block.getItemBlock(): Item {
     return Item.getItemFromBlock(this)!!
 }
